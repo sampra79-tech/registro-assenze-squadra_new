@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Registro Assenze Squadra</title>
+
+    <meta
+        name="theme-color"
+        content="#1565c0">
+
+    <link
+        rel="manifest"
+        hreftylesheet"
+        href="./css/style.css">
+
+</head>
+
+<body</h1>
+
+    <p>
+        Allenamenti:
+        Lunedì • Giovedì • Venerdì
+    </p>
+
+</header>
+
+<!-- DASHBOARD -->
+
+<section class="dashboard">
+
+    <div class="card">
+        <h3>Allenamenti Mese</h3>
+        <div id="dashboardTraining">
+            0
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Giocatori</h3>
+        <div id="dashboardPlayers">
+            16
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Partecipazione Media</h3>
+        <div id="dashboardPercentage">
+            0%
+        </div>
+    </div>
+
+</section>
+
+<!-- LOGO -->
+
+<section class="card">
+
+    <h2>Logo Squadra</h2>
+
+    <input
+        type="file"
+        id="logoUpload"
+        accept="image/*">
+
+    <br><br>
+
+    <img
+        id="teamLogo"
+        alt="Logo squadra"
+        style="
+            display:none;
+            max-width:250px;
+            max-height:250px;
+            border-radius:10px;
+        ">
+
+</section>
+
+<!-- SELEZIONE MESE -->
+
+<section class="card">
+
+    <h2>Mese</h2>
+
+    <input
+        type="month"
+        id="monthPicker">
+
+</section>
+
+<!-- ALLENAMENTO -->
+
+<section class="card">
+
+    <h2>Allenamento</h2>
+
+    <label for="trainingDate">
+
+        Data Allenamento
+
+    </label>
+
+    <br><br>
+
+    <select id="trainingDate">
+
+    </select>
+
+</section>
+
+<!-- RICERCA -->
+
+<section class="card">
+
+    <h2>Ricerca Giocatore</h2>
+
+    <input
+        type="text"
+        id="searchPlayer"
+        class="search"
+        placeholder="Cerca giocatore...">
+
+</section>
+
+<!-- GIOCATORI -->
+
+<section class="card">
+
+    <h2>Presenze / Assenze</h2>
+
+    <p>
+        Stato predefinito:
+        <strong>Presente</strong>
+    </p>
+
+    <div
+        id="playersContainer">
+
+    </div>
+
+    <br>
+
+    <button
+        id="saveBtn">
+
+        Salva Allenamento
+
+    </button>
+
+</section>
+
+<!-- CLASSIFICA -->
+
+<section class="card">
+
+    <h2>Classifica Partecipazione</h2>
+
+    <div
+        id="rankingContainer">
+
+    </div>
+
+</section>
+
+<!-- STATISTICHE -->
+
+<section class="card">
+
+    <h2>Statistiche Stagionali</h2>
+
+    <div
+        id="statsContainer">
+
+    </div>
+
+</section>
+
+<!-- BACKUP -->
+
+<section class="card">
+
+    <h2>Backup Dati</h2>
+
+    <button
+        id="exportJson">
+
+        Esporta JSON
+
+    </button>
+
+    <br><br>
+
+    <input
+        type="file"
+        id="importFile"
+        accept=".json">
+
+</section>
+
+<!-- EXCEL -->
+
+<section class="card">
+
+    <h2>Esportazione Excel</h2>
+
+    <button
+        id="exportExcel">
+
+        Esporta XLSX
+
+    </button>
+
+</section>
+
+<!-- LIBRERIA XLSX -->
+
+<script src="https://cdnjs.cloudflares/xlsx/0.18.5/xlsx.full.min.jsscript>
+
+<!-- FILE APPLICAZIONE -->
+
+./js/players.jsscript>
+
+<scriptlendar.jsscript>
+
+<script src="./js/statistics.js/backup.jsscript>
+
+<script srcExcel.jsscript>
+
+<script srcscript>
+
+<!-- REGISTRAZIONE SERVICE WORKER -->
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener(
+        "load",
+        () => {
+
+            navigator.serviceWorker
+                .register("./sw.js")
+                .then(() => {
+
+                    console.log(
+                        "Service Worker registrato"
+                    );
+
+                })
+                .catch(error => {
+
+                    console.error(
+                        error
+                    );
+
+                });
+
+        }
+    );
+
+}
+
+</script>
+
+</body>
+
+</html>
